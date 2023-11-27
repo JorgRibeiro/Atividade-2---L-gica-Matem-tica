@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+// autor: Jorge Alexandre Ribeiro Vilela Júnior
+
+int main() {
+  int A = 1; // A = verdadeiro
+  int B = 0; // B = Falso
+  int C = 1; // C = verdadeiro
+
+/* A lógica que usei para o resultado foi:
+0. eclarei 1 como sendo verdade e 0 como falso.
+
+1. Para "^" usei o operador lógico AND (&&)
+E para "V" usei o operador lógico OR (&&).
+
+2. E para ter o resultado peguei o valor da operação e igualei a 1.
+
+3. Por última, fiz o printf para mostrar o resultado e o resultado final.
+*/
+
+  
+  if ((A && (B || C)) == 1) { // a) A ^ (B v C)
+    printf("Verdadeiro\n");
+  } else {
+    printf("Falso\n");
+  }
+
+  if (((A && B) || C) == 1) { // b) (A ^ B) v C
+    printf("Verdadeiro\n");
+  }  else {
+    printf("Falso\n");
+  }
+
+  if ((!(A && B) || C) == 1) { // c) (A ^ B)’ v C
+    printf("Verdadeiro\n");
+  }  else {
+    printf("Falso\n");
+  }
+
+  if ((!A || (!B && C))== 1) { // d) A’ V (B’ ^ C)
+    printf("Verdadeiro\n");
+  }  else {
+    printf("Falso\n");
+  }
+  
+  return 0;
+}
