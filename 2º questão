@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+// autor: Jorge Alexandre Ribeiro Vilela Júnior
+
+int main() {
+
+  int n, m;
+  int mdc(int m, int n), mdc_result;
+  int mmc(int m, int n), mmc_result;
+
+  scanf("%d", &m);
+  scanf("%d", &n);
+
+  mmc_result = mmc(m, n);
+  mdc_result = mdc(m, n);
+
+  printf("mdc = %d\n", mdc_result);
+  printf("mmc = %d", mmc_result);
+
+  return 0;
+}
+
+int mmc(int m, int n) {  // função para o MMC
+
+  int mmc = 1;      // declara o mmc como 1, pq é o número neutro da multiplicação
+
+  for (int j = 2; j < n + m; j++) {
+
+    if (m % j == 0 || n % j == 0) { // se apenas um número for divisível, ele calcula o MMC
+      mmc = mmc * j;
+    }
+
+    if (m % j == 0) {  // if para ver se o número é divisível e dividir ele caso for
+      m = m / j;
+    }
+    if (n % j == 0) {  // if para ver se o número é divisível e dividir ele caso for
+      n = n / j;
+    }
+  }
+
+  return mmc;
+}
+
+int mdc(int m, int n) {  // função para o MDC
+
+  int mdc = 1;     // declara o mdc como 1, pq é o número neutro da multiplicação
+
+  for (int j = 2; j <= n + m;) {    // for para calcular o mdc
+
+    if (n % j == 0 && m % j == 0) { // esse if serve para calcular o MDC
+      mdc = mdc * j; // Quando um número divide m e n, o MDC multiplica por ele
+                     // mesmo e pelo divisor
+    }
+
+    if (m % j == 0) { // esse if serve para calcular o 1º número
+      m = m / j;
+    }
+
+    if (n % j == 0) { // já esse serve para cauluar o 2º número
+      n = n / j;
+    }
+
+    if (m % j != 0 &&
+        n % j != 0) { // caso j não divida nenhum dos números então j é somado
+                      // para + 1 para o cálculo continuar
+      j++;
+    }
+  }
+
+  return mdc;
+}
+
+// a lógica utilizada foi: ver se número X é divisível, se for divide e pega o número que dividie ele para calcular o mdc/mmc. Faz isso até X ser = 1
+
+// Fim do Programa
