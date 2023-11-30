@@ -1,0 +1,86 @@
+#include <stdio.h>
+
+// autor: Jorge Alexandre Ribeiro Vilela Júnior
+
+int main() {
+  
+int a, b;
+ int con;
+
+  printf("digite se A é verdadeiro(1) ou falso(0): ");  // aqui eu peguei se A seria Verdadeiro ou falso
+  scanf("%d", &a);
+  printf("digite se B é verdadeiro(1) ou falso(0): "); // E agora foi a vez de ver se o B era verdadeiro ou falso
+  scanf("%d", &b);
+
+
+  if(a == 1 && b == 1){                          // Aqui printei com os dois sendo verdadeiros
+    printf("Tabela verdade - Conjunção\n");
+    printf("A | B | A ^ B\n");
+    printf("V | V |   V  \n");
+    printf("Tabela verdade - Disjunção\n");
+    printf("A | B | A v B\n");
+    printf("V | V |   V  \n");
+    printf("Tabela verdade - Condicional\n");
+    printf("A | B | A -> B\n");
+    printf("V | V |   V  \n");
+    printf("Tabela verdade - Bicondicional\n");
+    printf("A | B | A <-> B\n");
+    printf("V | V |    V  \n");
+    printf("Tabela verdade - e ou exclusivo\n");
+    printf("A | B | A ⊕ B\n");
+    printf("V | V |   F  \n");
+  } else if(a == 1 && b == 0){                    // Aqui printei com os A sendo verdadeiro e B falso
+      printf("Tabela verdade - Conjunção\n");
+      printf("A | B | A ^ B\n");
+      printf("V | F |   F  \n");
+      printf("Tabela verdade - Disjunção\n");
+      printf("A | B | A v B\n");
+      printf("V | F |   V  \n");
+      printf("Tabela verdade - Condicional\n");
+      printf("A | B | A -> B\n");
+      printf("V | F |   F  \n");
+      printf("Tabela verdade - Bicondicional\n");
+      printf("A | B | A <-> B\n");
+      printf("V | F |    F  \n");
+      printf("Tabela verdade - e ou exclusivo\n");
+      printf("A | B | A ⊕ B\n");
+      printf("V | F |   V  \n");
+    } else if(a == 0 && b == 1){                // Aqui printei com os A sendo falso e B verdadeiro
+      printf("Tabela verdade - Conjunção\n");
+      printf("A | B | A ^ B\n");
+      printf("F | V |   F  \n");
+      printf("Tabela verdade - Disjunção\n");
+      printf("A | B | A v B\n");
+      printf("F | V |   V  \n");
+      printf("Tabela verdade - Condicional\n");
+      printf("A | B | A -> B\n");
+      printf("F | V |   V  \n");
+      printf("Tabela verdade - Bicondicional\n");
+      printf("A | B | A <-> B\n");
+      printf("F | V |    F  \n");
+      printf("Tabela verdade - e ou exclusivo\n");
+      printf("A | B | A ⊕ B\n");
+      printf("F | V |   V  \n");
+    } else if(a == 0 && b == 0){                 // Aqui printei com os dois sendo falsos
+    printf("Tabela verdade - Conjunção\n");
+    printf("A | B | A ^ B\n");
+    printf("F | F |   F  \n");
+    printf("Tabela verdade - Disjunção\n");
+    printf("A | B | A v B\n");
+    printf("F | F |   F  \n");
+    printf("Tabela verdade - Condicional\n");
+    printf("A | B | A -> B\n");
+    printf("F | F |   V  \n");
+    printf("Tabela verdade - Bicondicional\n");
+    printf("A | B | A <-> B\n");
+    printf("F | F |    V  \n");
+    printf("Tabela verdade - e ou exclusivo\n");
+    printf("A | B | A ⊕ B\n");
+    printf("F | F |   F  \n");
+  }
+  
+ 
+  
+  return 0;
+}
+
